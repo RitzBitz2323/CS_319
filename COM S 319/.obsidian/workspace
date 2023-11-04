@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "2de2e53eb0acd9fc",
+    "type": "split",
+    "children": [
+      {
+        "id": "409643674d2b131c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Week 2/Wednesday.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4fd2fb1a248b8012",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e06c36e25e3ce96",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "95015c89e1eb6e41",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "75d5aebc9a19638a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "65d02b21250f50cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9371386ea5c22b5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e65791bf419d55f6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Week 2/Wednesday.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "409643674d2b131c",
+  "lastOpenFiles": [
+    "Week 2/Wednesday.md",
+    "Week 1/Friday.md",
+    "Week 1/Wednesday.md"
+  ]
+}

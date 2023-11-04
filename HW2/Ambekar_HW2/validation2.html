@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <style>
+      .errorMessage {
+        color: red;
+      }
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #42b16c;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #c0b127;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+        }
+        div {   
+            border-radius: 5px;
+            background-color: #c0b127;
+            padding: 20px;
+        }
+    </style>
+    <title>Contact Information</title>
+    <script src="validation2.js"></script>
+</head>
+  <body>
+      <div>
+    <form name="val2" id="val2" action="">
+        <fieldset>
+            <p id="Email">
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br>
+            </p>
+            <p id="Phone">
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone"><br>
+            </p>
+            <p id="Address">
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address"><br>
+            </p>
+        <input type="button" name="continue" value="Submit" onclick="validateform()" id="Continue">
+        </fieldset>
+    </div>
+  </body>
+</html>

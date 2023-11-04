@@ -1,0 +1,73 @@
+import static org.junit.Assert.assertEquals;
+import java.util.concurrent.TimeUnit;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class loginTest {
+    static WebDriver driver;
+    static String pathChromeDriver="C://COMS_319/HW4/chromedriver.exe";
+    static String pathLoginPage="file:///C://COMS_319/HW4/HW4-UITesting-Files/task1/validation.html";
+
+    String txtFirstName="txtFirstName";
+    String txtLastName="txtLastName";
+    String selectGender="selectGender";
+    String selectState="selectState";
+    String txtEmail="txtEmail";
+    String txtPhone="txtPhone";
+    String txtAddress="txtAddress";
+    String btnValidate="btnValidate";
+    String labelNotifytxtFinalResult="labelNotifytxtFinalResult";
+
+    @BeforeClass
+    public static void openBrowser()
+    {
+        System.setProperty("webdriver.chrome.driver", pathChromeDriver);
+        driver= new ChromeDriver() ;
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+    @AfterClass
+    public static void closeBrowser() {
+        driver.quit();
+    }
+
+    @Test
+    public void loginSuccessTest() throws InterruptedException {
+        driver.get(pathLoginPage);
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//input[@id='"+txtFirstName+"']")).sendKeys("Ritvik");
+        driver.findElement(By.xpath("//input[@id='"+txtLastName+"']")).sendKeys("Ambekar");
+        driver.findElement(By.xpath("//select[@name='"+selectGender+"']")).sendKeys("Male");
+        driver.findElement(By.xpath("//select[@name='"+selectState+"']")).sendKeys("Nebraska");
+        driver.findElement(By.xpath("//input[@id='"+txtEmail+"']")).sendKeys("rambekar@iastate.edu");
+        driver.findElement(By.xpath("//input[@id='"+txtPhone+"']")).sendKeys("4024875643");
+        driver.findElement(By.xpath("//input[@id='"+txtAddress+"']")).sendKeys("Omaha,NE");
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//input[@id='"+btnValidate+"']")).click();
+        String strMessage=driver.findElement(By.xpath("//label[@id='"+labelNotifytxtFinalResult+"']")).getText();
+        assertEquals("Failed test case", strMessage, "OK");
+        Thread.sleep(2000);
+    }
+
+    @Test
+    public void loginFailedTest() throws InterruptedException {
+        driver.get(pathLoginPage);
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//input[@id='"+txtFirstName+"']")).sendKeys("Ritvik");
+        driver.findElement(By.xpath("//input[@id='"+txtLastName+"']")).sendKeys("Ambekar");
+        driver.findElement(By.xpath("//select[@name='"+selectGender+"']")).sendKeys("Male");
+        driver.findElement(By.xpath("//select[@name='"+selectState+"']")).sendKeys("Nebraska");
+        driver.findElement(By.xpath("//input[@id='"+txtEmail+"']")).sendKeys("rambekarWERWERWERWERWER");
+        driver.findElement(By.xpath("//input[@id='"+txtPhone+"']")).sendKeys("4024875643");
+        driver.findElement(By.xpath("//input[@id='"+txtAddress+"']")).sendKeys("Omaha,NE");
+        Thread.sleep(4000);
+        driver.findElement(By.id(btnValidate)).click();
+        String strMessage=driver.findElement(By.xpath("//label[@id='"+labelNotifytxtFinalResult+"']")).getText();
+        assertEquals("Failed test case", strMessage, "Error");
+        Thread.sleep(2000);
+    }
+}

@@ -1,0 +1,68 @@
+<html>
+    <title>Validation Form</title>
+    <style>
+        .errorMessage{color: red;}
+        input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #42b16c;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #c0b127;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+        }
+        div {   
+            border-radius: 5px;
+            background-color: #c0b127;
+            padding: 20px;
+        }
+    </style>
+    <script src="validation1.js"></script>
+    <body>
+        <div>
+        <form name="val1" id = "val1" action="validation2.html">
+            <fieldset>
+                <p id="FirstName">
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                </p>
+                <p id="LastName">
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" id="lname" name="lname"><br>
+                </p>
+                <p id="Gender">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="Gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select><br>
+                <p id="State">
+                    <label for="state">State:</label>
+                    <select id="state" name="State">
+                        <option value="california">California</option>
+                        <option value="florida">Florida</option>
+                        <option value="newyork">New York</option>
+                        <option value="texas">Texas</option>
+                        <option value="hawaii">Hawaii</option>
+                        <option value="washington">Washington</option>
+                        <option value="colorado">Colorado</option>
+                        <option value="virginia">Virginia</option>
+                        <option value="iowa">Iowa</option>
+                        <option value="arizona">Arizona</option>
+                    </select><br>
+                </p>
+            <input type="button" name="continue" value="Continue" onclick="validateform()" id="Continue">
+            </fieldset>
+        </form>
+    </div>
+    </body>
+</html>
